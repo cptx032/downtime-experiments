@@ -1,0 +1,9 @@
+mypy
+requests
+black
+isort
+pyflakes
+Django
+djangorestframework
+psycopg2
+piprot
