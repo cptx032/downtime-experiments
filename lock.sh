@@ -38,8 +38,13 @@ sudo -u postgres psql -c "create database downtimes;"
 echo "Initial Migration"
 $PY_EXE ./manage.py migrate
 
+echo Populating
 $PY_EXE ./manage.py populate $2
+
+echo Starting Server
 start_server
+
+echo "Checkout branch"
 git checkout $1
 start_read_client
 # 10s of normal execution
