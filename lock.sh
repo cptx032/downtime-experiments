@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export READ_LOG_PATH="./read-log-$2.txt"
+export READ_LOG_PATH="./read-log-$1-$2.txt"
 export PY_EXE=$(which python)
 # how many seconds we will look before and after migration
 export NORMAL_AVG_RESPONSE_WINDOW=10
