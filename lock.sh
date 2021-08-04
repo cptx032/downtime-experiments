@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-export READ_LOG_PATH="./read-log.txt"
+export READ_LOG_PATH="./read-log-$2.txt"
 export PY_EXE=$(which python)
+# how many seconds we will look before and after migration
+export NORMAL_AVG_RESPONSE_WINDOW=10
 
 start_server() {
 	# no reload is to avoid stop server when doing git checkout
@@ -27,22 +29,28 @@ stop_read_client() {
 	kill -9 $READ_CLIENT_PID
 }
 
-start_migration() {
-	echo fixme
-}
 
+git checkout main
+echo "Setting up database"
+sudo -u postgres psql -c "drop database downtimes;"
+sudo -u postgres psql -c "create database downtimes;"
 
-# fixme
-# drop database
-# create database
-# git checkout $1
+echo "Initial Migration"
+$PY_EXE ./manage.py migrate
+
+$PY_EXE ./manage.py populate $2
 start_server
+git checkout $1
 start_read_client
 # 10s of normal execution
-sleep 10
+sleep $NORMAL_AVG_RESPONSE_WINDOW
+echo "START MIGRATION"
 echo "START MIGRATION" >> $READ_LOG_PATH
-start_migration
+$PY_EXE ./manage.py migrate
+echo "END MIGRATION"
 echo "END MIGRATION" >> $READ_LOG_PATH
 
+echo "Getting metrics after migration"
+sleep $NORMAL_AVG_RESPONSE_WINDOW
 stop_server
 stop_read_client
