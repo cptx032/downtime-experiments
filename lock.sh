@@ -30,6 +30,8 @@ stop_read_client() {
 }
 
 
+echo Cleaning log file
+echo "" > $READ_LOG_PATH
 git checkout main
 echo "Setting up database"
 sudo -u postgres psql -c "drop database downtimes;"
@@ -49,11 +51,11 @@ git checkout $1
 start_read_client
 # 10s of normal execution
 sleep $NORMAL_AVG_RESPONSE_WINDOW
-echo "START MIGRATION"
-echo "START MIGRATION" >> $READ_LOG_PATH
+echo "START MIGRATION" $(date)
+echo "START MIGRATION" $(date) >> $READ_LOG_PATH
 $PY_EXE ./manage.py migrate
-echo "END MIGRATION"
-echo "END MIGRATION" >> $READ_LOG_PATH
+echo "END MIGRATION" $(date)
+echo "END MIGRATION" $(date) >> $READ_LOG_PATH
 
 echo "Getting metrics after migration"
 sleep $NORMAL_AVG_RESPONSE_WINDOW
