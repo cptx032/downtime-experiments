@@ -11,6 +11,12 @@ start_server() {
 	# at the same time, the "no reload" option make possible to kill
 	# the django server with only the PDI, because Django normally creates
 	# many subprocess
+	if [ -n "$3" ]
+	then
+		echo Checking out intermediary branch
+		git checkout $3
+		$PY_EXE ./manage.py migrate
+	fi
     $PY_EXE ./manage.py runserver --noreload &
     export SERVER_PID=$!
     echo Sleeping 5s
@@ -48,8 +54,11 @@ start_server
 
 echo "Checkout branch"
 git checkout $1
+
+# after the checkout the application is still running the old version
 start_read_client
-# 10s of normal execution
+# while this script is stopped because this sleep the read-application is
+# still running in the background
 sleep $NORMAL_AVG_RESPONSE_WINDOW
 echo "START MIGRATION" $(date)
 echo "START MIGRATION" $(date) >> $READ_LOG_PATH
