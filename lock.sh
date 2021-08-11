@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-export READ_LOG_PATH="./read-log-$1-$2.txt"
+export TARGET_BRANCH=$1
+export POPULATION_PARAM=$2
+export INTERMEDIARY_BRANCH=$3
+
+export READ_LOG_PATH="./read-log-$TARGET_BRANCH-$POPULATION_PARAM.txt"
 export PY_EXE=$(which python)
 # how many seconds we will look before and after migration
 export NORMAL_AVG_RESPONSE_WINDOW=10
@@ -11,10 +15,10 @@ start_server() {
 	# at the same time, the "no reload" option make possible to kill
 	# the django server with only the PDI, because Django normally creates
 	# many subprocess
-	if [ -n "$3" ]
+	if [ -n "$INTERMEDIARY_BRANCH" ]
 	then
 		echo Checking out intermediary branch
-		git checkout $3
+		git checkout $INTERMEDIARY_BRANCH
 		$PY_EXE ./manage.py migrate
 	fi
     $PY_EXE ./manage.py runserver --noreload &
@@ -47,13 +51,13 @@ echo "Initial Migration"
 $PY_EXE ./manage.py migrate
 
 echo Populating
-$PY_EXE ./manage.py populate $2
+$PY_EXE ./manage.py populate $POPULATION_PARAM
 
 echo Starting Server
 start_server
 
 echo "Checkout branch"
-git checkout $1
+git checkout $TARGET_BRANCH
 
 # after the checkout the application is still running the old version
 start_read_client
