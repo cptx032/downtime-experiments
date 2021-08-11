@@ -15,12 +15,6 @@ start_server() {
 	# at the same time, the "no reload" option make possible to kill
 	# the django server with only the PDI, because Django normally creates
 	# many subprocess
-	if [ -n "$INTERMEDIARY_BRANCH" ]
-	then
-		echo Checking out intermediary branch
-		git checkout $INTERMEDIARY_BRANCH
-		$PY_EXE ./manage.py migrate
-	fi
     $PY_EXE ./manage.py runserver --noreload &
     export SERVER_PID=$!
     echo Sleeping 5s
@@ -49,6 +43,13 @@ sudo -u postgres psql -c "create database downtimes;"
 
 echo "Initial Migration"
 $PY_EXE ./manage.py migrate
+
+if [ -n "$INTERMEDIARY_BRANCH" ]
+then
+	echo Checking out intermediary branch
+	git checkout $INTERMEDIARY_BRANCH
+	$PY_EXE ./manage.py migrate
+fi
 
 echo Populating
 $PY_EXE ./manage.py populate $POPULATION_PARAM
