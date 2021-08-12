@@ -1,3 +1,7 @@
+# Django project
+- resolve o problema de:
+	- que operações sempre vêm agregadas?
+
 # downtime-experiments
 
 ## Operations to test
