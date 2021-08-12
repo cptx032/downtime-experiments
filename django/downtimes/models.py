@@ -6,4 +6,4 @@ class Tag(models.Model):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=512)
+    last_name = models.CharField(max_length=512)
