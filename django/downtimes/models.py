@@ -7,3 +7,7 @@ class Tag(models.Model):
 
 class Person(models.Model):
     name = models.CharField(max_length=512)
+
+
+class Company(models.Model):
+    pass
