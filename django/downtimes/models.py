@@ -5,5 +5,5 @@ class Tag(models.Model):
     name = models.CharField(max_length=512)
 
 
-class Person(models.Model):
+class People(models.Model):
     name = models.CharField(max_length=512)
