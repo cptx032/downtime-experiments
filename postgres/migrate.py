@@ -43,3 +43,21 @@ with connection:
     elif op_code == "A13":
         cursor.execute("ALTER TABLE Subtag drop constraint fk_;")
         connection.commit()
+    elif op_code == "A20":
+        cursor.execute("ALTER TABLE Tag alter column other_column set default 'default value';")
+        connection.commit()
+    elif op_code == "A7":
+        cursor.execute("ALTER TABLE Tag rename name to new_column_name;")
+        connection.commit()
+    elif op_code == "A4":
+        cursor.execute("DROP TABLE Subtag;")
+        connection.commit()
+    elif op_code == "A24":
+        cursor.execute("ALTER TABLE Tag ALTER COLUMN name drop not null;")
+        connection.commit()
+    elif op_code == "A16":
+        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (name <= 1000);")
+        connection.commit()
+    elif op_code == "A5":
+        cursor.execute("ALTER TABLE Subtag RENAME TO NewTableName;")
+        connection.commit()
