@@ -18,8 +18,8 @@ connection: Con = psycopg2.connect(
 chunk_size: int = 10000
 with connection:
     with connection.cursor() as cursor:
-        if op_code in ("A18", "A2"):
-            cursor.execute("CREATE TABLE Tag (name varchar(255))")
+        if op_code in ("A18", "A2", "A1", "A6", "A8"):
+            cursor.execute("CREATE TABLE Tag (name varchar(255), id serial primary key)")
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
                 values: List[Dict[str, str]] = [
@@ -53,3 +53,30 @@ with connection:
                     "INSERT INTO Tag (name, subtag_id) VALUES (%(name)s, %(subtag_id)s)", values
                 )
                 time.sleep(0.1)
+        # drop default value
+        elif op_code == "A21":
+            cursor.execute("CREATE TABLE Tag (name int default 0)")
+            for i in range(population):
+                print("populating {}/{}".format(i + 1, population))
+                values: List[Dict[str, str]] = [
+                    {"name": random.choice(range(1000))} for i in range(chunk_size)
+                ]
+                cursor.executemany(
+                    "INSERT INTO Tag (name) VALUES (%(name)s)", values
+                )
+                time.sleep(0.1)
+            connection.commit()
+        elif op_code == "A13":
+            cursor.execute("CREATE TABLE Tag (name varchar(255), id serial primary key)")
+            connection.commit()
+            cursor.execute("CREATE TABLE Subtag (subtag_id integer, constraint fk_ foreign key(subtag_id) references Tag(id) )")
+            for i in range(population):
+                print("populating {}/{}".format(i + 1, population))
+                values: List[Dict[str, str]] = [
+                    {"name": random.choice(range(1000))} for i in range(chunk_size)
+                ]
+                cursor.executemany(
+                    "INSERT INTO Tag (name) VALUES (%(name)s)", values
+                )
+                time.sleep(0.1)
+            connection.commit()
