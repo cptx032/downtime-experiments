@@ -1,3 +1,8 @@
+# how to run the postgres experiments
+- `pip install psycopg2`
+- create a postgres database named `downtimes` with `sudo -u postgres psql -c "CREATE DATABASE downtimes;"`
+- run `./run.sh`
+
 # Django project
 - resolve o problema de:
 	- que operações sempre vêm agregadas?

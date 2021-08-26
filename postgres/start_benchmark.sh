@@ -34,11 +34,11 @@ echo Read Client Started!
 # while this script is stopped because this sleep the read-application is
 # still running in the background
 sleep $NORMAL_AVG_RESPONSE_WINDOW
-echo "START MIGRATION" $(date)
-echo "START MIGRATION" $(date) >> $READ_LOG_PATH
+echo "START MIGRATION" $(date --iso-8601=ns)
+echo "START MIGRATION" $(date --iso-8601=ns) >> $READ_LOG_PATH
 $PY_EXE ./migrate.py $OP_DB_CODE
-echo "END MIGRATION" $(date)
-echo "END MIGRATION" $(date) >> $READ_LOG_PATH
+echo "END MIGRATION" $(date --iso-8601=ns)
+echo "END MIGRATION" $(date --iso-8601=ns) >> $READ_LOG_PATH
 
 echo "Getting metrics after migration"
 sleep $NORMAL_AVG_RESPONSE_WINDOW
