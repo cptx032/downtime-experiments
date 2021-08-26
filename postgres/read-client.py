@@ -16,7 +16,7 @@ while True:
             success: bool = True
             error: str = ""
             try:
-                cursor.execute("SELECT * from {}".format(sys.argv[2]))
+                cursor.execute("SELECT * from {} LIMIT 100".format(sys.argv[2]))
                 cursor.fetchall()
             except Exception as e:
                 success = False
