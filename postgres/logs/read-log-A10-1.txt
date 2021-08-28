@@ -1,0 +1,167 @@
+
+2021-08-26T23:22:13.515106;2021-08-26T23:22:13.515843;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:14.030398;2021-08-26T23:22:14.034965;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:14.550199;2021-08-26T23:22:14.554606;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:15.070483;2021-08-26T23:22:15.074997;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:15.590795;2021-08-26T23:22:15.595220;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:16.116543;2021-08-26T23:22:16.122619;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:16.636472;2021-08-26T23:22:16.641015;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:17.154720;2021-08-26T23:22:17.159191;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:17.669595;2021-08-26T23:22:17.673165;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:18.188147;2021-08-26T23:22:18.192680;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:18.706758;2021-08-26T23:22:18.711618;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:19.225498;2021-08-26T23:22:19.229755;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:19.744175;2021-08-26T23:22:19.748531;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:20.258634;2021-08-26T23:22:20.261973;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:20.776211;2021-08-26T23:22:20.780837;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:21.294763;2021-08-26T23:22:21.299150;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:21.812672;2021-08-26T23:22:21.817017;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:22.330790;2021-08-26T23:22:22.335271;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:22.849068;2021-08-26T23:22:22.853578;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:23.368177;2021-08-26T23:22:23.373298;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:23.887310;2021-08-26T23:22:23.892068;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:24.405677;2021-08-26T23:22:24.410218;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+START MIGRATION 2021-08-26T23:22:24,425575134+00:00
+END MIGRATION 2021-08-26T23:22:24,588422104+00:00
+2021-08-26T23:22:24.924294;2021-08-26T23:22:24.928825;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:25.443381;2021-08-26T23:22:25.448008;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:25.969345;2021-08-26T23:22:25.975369;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:26.489899;2021-08-26T23:22:26.494554;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:27.008637;2021-08-26T23:22:27.013195;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:27.526761;2021-08-26T23:22:27.531084;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:28.047010;2021-08-26T23:22:28.051574;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:28.565427;2021-08-26T23:22:28.570817;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:29.084779;2021-08-26T23:22:29.090063;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:29.605361;2021-08-26T23:22:29.610173;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:30.124486;2021-08-26T23:22:30.129196;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:30.643334;2021-08-26T23:22:30.647840;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:31.162410;2021-08-26T23:22:31.167230;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:31.682577;2021-08-26T23:22:31.687093;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:32.201152;2021-08-26T23:22:32.206116;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:32.719940;2021-08-26T23:22:32.724225;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:33.239331;2021-08-26T23:22:33.243830;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:33.759489;2021-08-26T23:22:33.764729;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+
+2021-08-26T23:22:34.283316;2021-08-26T23:22:34.289386;0;relation "tag" does not exist
+LINE 1: SELECT * from Tag LIMIT 100
+                      ^
+

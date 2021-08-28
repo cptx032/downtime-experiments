@@ -20,16 +20,10 @@ def get_metrics(
                 continue
             if line.startswith("START MIGRATION"):
                 migration_started = True
-                hour, minute, secs = [
-                    int(i) for i in line.split()[5].split(":")
-                ]
-                migration_start = datetime(2021, 1, 1, hour, minute, secs)
+                migration_start = datetime.fromisoformat(line.split()[-1].replace(',', '.')[:-9])
             elif line.startswith("END MIGRATION"):
                 migration_ends = True
-                hour, minute, secs = [
-                    int(i) for i in line.split()[5].split(":")
-                ]
-                migration_end = datetime(2021, 1, 1, hour, minute, secs)
+                migration_end = datetime.fromisoformat(line.split()[-1].replace(',', '.')[:-9])
                 migration_duration = (
                     migration_end - migration_start
                 ).total_seconds()
