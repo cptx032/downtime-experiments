@@ -47,55 +47,56 @@ def get_metrics(
     )
 
 
-# the A10 is not possible in normal django applications
-operations: List[str] = [
-    "A18",
-    "A2",
-    "A12",
-    "A21",
-    "A1",
-    "A6",
-    "A8",
-    "A13",
-    "A20",
-    "A7",
-    "A4",
-    "A24",
-    "A16",
-    "A5",
-]
+if __name__ == "__main__":
+    # the A10 is not possible in normal django applications
+    operations: List[str] = [
+        "A18",
+        "A2",
+        "A12",
+        "A21",
+        "A1",
+        "A6",
+        "A8",
+        "A13",
+        "A20",
+        "A7",
+        "A4",
+        "A24",
+        "A16",
+        "A5",
+    ]
 
-headers = [
-    "Operation",
-    "Number of Rows",
-    "Migration Duration",
-    "Requests Before Migration",
-    "Duration Average Before Migration",
-    "Requests During Migration",
-    "Duration Average During Migration",
-    "Requests After Migration",
-    "Duration Average After Migration",
-]
+    headers = [
+        "Operation",
+        "Number of Rows",
+        "Migration Duration",
+        "Requests Before Migration",
+        "Duration Average Before Migration",
+        "Requests During Migration",
+        "Duration Average During Migration",
+        "Requests After Migration",
+        "Duration Average After Migration",
+    ]
 
-print(";".join(headers))
-for population in (1, 10, 100):
-    for operation in operations:
-        file_path: str = "read-log-{}-{}.txt".format(operation, population)
-        before: List[datetime]
-        during: List[datetime]
-        after: List[datetime]
-        migration_duration: float
+    print(";".join(headers))
+    for population in (1, 10, 100):
+        for operation in operations:
+            file_path: str = "read-log-{}-{}.txt".format(operation, population)
+            before: List[datetime]
+            during: List[datetime]
+            after: List[datetime]
+            migration_duration: float
 
-        before, during, after, migration_duration = get_metrics(file_path)
-        values: List[str] = [
-            operation,
-            str(population * 10000),
-            str(migration_duration),
-            str(len(before)),
-            str(sum(before) / float(len(before))),
-            str(len(during)),
-            str(sum(during) / float(len(during))),
-            str(len(after)),
-            str(sum(after) / float(len(after))),
-        ]
-        print(";".join(values))
+            before, during, after, migration_duration = get_metrics(file_path)
+            values: List[str] = [
+                operation,
+                str(population * 10000),
+                str(migration_duration),
+                str(len(before)),
+                str(sum(before) / float(len(before))),
+                str(len(during)),
+                str(sum(during) / float(len(during))),
+                str(len(after)),
+                str(sum(after) / float(len(after))),
+            ]
+            print(";".join(values))
