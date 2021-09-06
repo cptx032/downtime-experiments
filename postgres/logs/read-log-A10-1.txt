@@ -1,167 +1,89 @@
 
-2021-08-26T23:22:13.515106;2021-08-26T23:22:13.515843;0;relation "tag" does not exist
+2021-08-28T02:13:46.775347;2021-08-28T02:13:46.776361;0;relation "tag" does not exist
 LINE 1: SELECT * from Tag LIMIT 100
                       ^
 
-2021-08-26T23:22:14.030398;2021-08-26T23:22:14.034965;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:47.277349;2021-08-28T02:13:47.277981;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:14.550199;2021-08-26T23:22:14.554606;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:47.778960;2021-08-28T02:13:47.779543;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:15.070483;2021-08-26T23:22:15.074997;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:48.280634;2021-08-28T02:13:48.281374;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:15.590795;2021-08-26T23:22:15.595220;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:48.782484;2021-08-28T02:13:48.783161;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:16.116543;2021-08-26T23:22:16.122619;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:49.284301;2021-08-28T02:13:49.285146;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:16.636472;2021-08-26T23:22:16.641015;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:49.786377;2021-08-28T02:13:49.787056;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:17.154720;2021-08-26T23:22:17.159191;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:50.288208;2021-08-28T02:13:50.288962;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:17.669595;2021-08-26T23:22:17.673165;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:50.790161;2021-08-28T02:13:50.790852;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:18.188147;2021-08-26T23:22:18.192680;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:51.291990;2021-08-28T02:13:51.292852;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:18.706758;2021-08-26T23:22:18.711618;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:51.794240;2021-08-28T02:13:51.795031;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:19.225498;2021-08-26T23:22:19.229755;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:52.296835;2021-08-28T02:13:52.298009;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:19.744175;2021-08-26T23:22:19.748531;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:52.799261;2021-08-28T02:13:52.799785;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:20.258634;2021-08-26T23:22:20.261973;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:53.300825;2021-08-28T02:13:53.301505;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:20.776211;2021-08-26T23:22:20.780837;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:53.802490;2021-08-28T02:13:53.803202;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:21.294763;2021-08-26T23:22:21.299150;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:54.304294;2021-08-28T02:13:54.304869;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:21.812672;2021-08-26T23:22:21.817017;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:54.806150;2021-08-28T02:13:54.806806;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:22.330790;2021-08-26T23:22:22.335271;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:55.307900;2021-08-28T02:13:55.308527;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:22.849068;2021-08-26T23:22:22.853578;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:55.809468;2021-08-28T02:13:55.810110;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:23.368177;2021-08-26T23:22:23.373298;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:56.311269;2021-08-28T02:13:56.312056;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:23.887310;2021-08-26T23:22:23.892068;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:56.813519;2021-08-28T02:13:56.814369;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:24.405677;2021-08-26T23:22:24.410218;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:57.315611;2021-08-28T02:13:57.316139;0;current transaction is aborted, commands ignored until end of transaction block
 
-START MIGRATION 2021-08-26T23:22:24,425575134+00:00
-END MIGRATION 2021-08-26T23:22:24,588422104+00:00
-2021-08-26T23:22:24.924294;2021-08-26T23:22:24.928825;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+START MIGRATION 2021-08-28T02:13:57,684216017+00:00
+2021-08-28T02:13:57.817022;2021-08-28T02:13:57.817617;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:25.443381;2021-08-26T23:22:25.448008;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+END MIGRATION 2021-08-28T02:13:57,853249784+00:00
+2021-08-28T02:13:58.318694;2021-08-28T02:13:58.319418;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:25.969345;2021-08-26T23:22:25.975369;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:58.820607;2021-08-28T02:13:58.821209;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:26.489899;2021-08-26T23:22:26.494554;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:59.322255;2021-08-28T02:13:59.323153;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:27.008637;2021-08-26T23:22:27.013195;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:13:59.824367;2021-08-28T02:13:59.825069;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:27.526761;2021-08-26T23:22:27.531084;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:00.326130;2021-08-28T02:14:00.326761;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:28.047010;2021-08-26T23:22:28.051574;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:00.827741;2021-08-28T02:14:00.828526;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:28.565427;2021-08-26T23:22:28.570817;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:01.329730;2021-08-28T02:14:01.330497;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:29.084779;2021-08-26T23:22:29.090063;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:01.831591;2021-08-28T02:14:01.832408;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:29.605361;2021-08-26T23:22:29.610173;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:02.333779;2021-08-28T02:14:02.334560;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:30.124486;2021-08-26T23:22:30.129196;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:02.835687;2021-08-28T02:14:02.836253;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:30.643334;2021-08-26T23:22:30.647840;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:03.337408;2021-08-28T02:14:03.338040;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:31.162410;2021-08-26T23:22:31.167230;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:03.839295;2021-08-28T02:14:03.840065;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:31.682577;2021-08-26T23:22:31.687093;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:04.341434;2021-08-28T02:14:04.342191;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:32.201152;2021-08-26T23:22:32.206116;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:04.843277;2021-08-28T02:14:04.843883;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:32.719940;2021-08-26T23:22:32.724225;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:05.345088;2021-08-28T02:14:05.345888;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:33.239331;2021-08-26T23:22:33.243830;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:05.846927;2021-08-28T02:14:05.847846;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:33.759489;2021-08-26T23:22:33.764729;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:06.349085;2021-08-28T02:14:06.349688;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-08-26T23:22:34.283316;2021-08-26T23:22:34.289386;0;relation "tag" does not exist
-LINE 1: SELECT * from Tag LIMIT 100
-                      ^
+2021-08-28T02:14:06.851038;2021-08-28T02:14:06.852492;0;current transaction is aborted, commands ignored until end of transaction block
+
+2021-08-28T02:14:07.353751;2021-08-28T02:14:07.354426;0;current transaction is aborted, commands ignored until end of transaction block
 
