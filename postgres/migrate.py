@@ -27,7 +27,7 @@ with connection:
         connection.commit()
     # drop default value
     elif op_code == "A21":
-        cursor.execute("ALTER TABLE Tag alter column name drop default;")
+        cursor.execute("ALTER TABLE Tag alter column number_col drop default;")
         connection.commit()
     # add table
     elif op_code == "A1":
@@ -56,7 +56,7 @@ with connection:
         cursor.execute("ALTER TABLE Tag ALTER COLUMN name drop not null;")
         connection.commit()
     elif op_code == "A16":
-        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (name <= 1000);")
+        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (number_col <= 1000);")
         connection.commit()
     elif op_code == "A5":
         cursor.execute("ALTER TABLE Subtag RENAME TO NewTableName;")

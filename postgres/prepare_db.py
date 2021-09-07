@@ -33,7 +33,7 @@ with connection:
         #add fk
         elif op_code == "A12":
             cursor.execute("CREATE TABLE Subtag (name varchar(255), id serial primary key)")
-            cursor.execute("CREATE TABLE Tag (name varchar(255), subtag_id integer)")
+            cursor.execute("CREATE TABLE Tag (name varchar(255), subtag_id integer, id serial primary key)")
             cursor.executemany(
                 "INSERT INTO Subtag (name) VALUES (%(name)s)", [
                     {"name":  get_random_string()}
@@ -55,7 +55,7 @@ with connection:
                 time.sleep(0.1)
         # drop default value
         elif op_code == "A21":
-            cursor.execute("CREATE TABLE Tag (name int default 0)")
+            cursor.execute("CREATE TABLE Tag (number_col int default 0, name varchar(255), id serial primary key)")
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
                 values: List[Dict[str, str]] = [
@@ -129,15 +129,18 @@ with connection:
             connection.commit()
         # add constraint
         elif op_code == "A16":
-            cursor.execute("CREATE TABLE Tag (name integer)")
+            cursor.execute("CREATE TABLE Tag (name varchar(255), number_col integer, id serial primary key)")
             connection.commit()
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
                 values: List[Dict[str, str]] = [
-                    {"name": random.choice(range(1000))} for i in range(chunk_size)
+                    {
+                        "name": get_random_string(),
+                        "number_col": random.choice(range(1000)),
+                    } for i in range(chunk_size)
                 ]
                 cursor.executemany(
-                    "INSERT INTO Tag (name) VALUES (%(name)s)", values
+                    "INSERT INTO Tag (name, number_col) VALUES (%(name)s, %(number_col)s)", values
                 )
                 time.sleep(0.1)
             connection.commit()
