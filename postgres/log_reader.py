@@ -11,14 +11,14 @@ args = parser.parse_args()
 
 def get_metrics(
     file_path: str,
-) -> Tuple[List[datetime], List[datetime], List[datetime]]:
+) -> Tuple[List[float], List[float], List[float], float]:
     migration_started: bool = False
     migration_ends: bool = False
-    times_before_migration: List[datetime] = []
-    times_during_migration: List[datetime] = []
-    times_after_migration: List[datetime] = []
-    migration_start: Optional[datetime] = None
-    migration_duration: Optional[float] = None
+    times_before_migration: List[float] = []
+    times_during_migration: List[float] = []
+    times_after_migration: List[float] = []
+    migration_start: datetime
+    migration_duration: float
 
     with open(file_path) as log_file:
         for line in log_file.readlines():
@@ -95,9 +95,9 @@ if __name__ == "__main__":
             file_path: str = "{}-log-{}-{}.txt".format(
                 args.read_write, operation, population
             )
-            before: List[datetime]
-            during: List[datetime]
-            after: List[datetime]
+            before: List[float]
+            during: List[float]
+            after: List[float]
             migration_duration: float
 
             before, during, after, migration_duration = get_metrics(file_path)
@@ -106,10 +106,10 @@ if __name__ == "__main__":
                 str(population * 10000),
                 str(migration_duration),
                 str(len(before)),
-                str(sum(before) / float(len(before))),
+                str(sum(before) / float(len(before))) if len(before) else "0",
                 str(len(during)),
-                str(sum(during) / float(len(during))),
+                str(sum(during) / float(len(during))) if len(during) else "0",
                 str(len(after)),
-                str(sum(after) / float(len(after))),
+                str(sum(after) / float(len(after))) if len(after) else "0",
             ]
             print(";".join(values))

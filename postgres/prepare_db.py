@@ -18,7 +18,7 @@ connection: Con = psycopg2.connect(
 chunk_size: int = 10000
 with connection:
     with connection.cursor() as cursor:
-        if op_code in ("A18", "A2", "A1", "A6", "A8", "A7"):
+        if op_code in ("A18", "A2", "A1", "A8", "A7"):
             cursor.execute(
                 "CREATE TABLE Tag (name varchar(255), id serial primary key)"
             )
@@ -26,6 +26,25 @@ with connection:
                 print("populating {}/{}".format(i + 1, population))
                 values: List[Dict[str, str]] = [
                     {"name": get_random_string()} for i in range(chunk_size)
+                ]
+                cursor.executemany(
+                    "INSERT INTO Tag (name) VALUES (%(name)s)", values
+                )
+                time.sleep(0.1)
+            connection.commit()
+        # drop column
+        elif op_code == "A6":
+            cursor.execute(
+                "CREATE TABLE Tag (name varchar(255), other_name varchar(255), id serial primary key)"
+            )
+            for i in range(population):
+                print("populating {}/{}".format(i + 1, population))
+                values = [
+                    {
+                        "name": get_random_string(),
+                        "other_name": get_random_string(),
+                    }
+                    for i in range(chunk_size)
                 ]
                 cursor.executemany(
                     "INSERT INTO Tag (name) VALUES (%(name)s)", values
@@ -46,10 +65,10 @@ with connection:
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
+                values = [
                     {
                         "name": get_random_string(),
-                        "subtag_id": random.choice([1, 2, 3]),
+                        "subtag_id": str(random.choice([1, 2, 3])),
                     }
                     for i in range(chunk_size)
                 ]
@@ -65,8 +84,8 @@ with connection:
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
-                    {"name": random.choice(range(1000))}
+                values = [
+                    {"name": str(random.choice(range(1000)))}
                     for i in range(chunk_size)
                 ]
                 cursor.executemany(
@@ -84,8 +103,8 @@ with connection:
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
-                    {"name": random.choice(range(1000))}
+                values = [
+                    {"name": str(random.choice(range(1000)))}
                     for i in range(chunk_size)
                 ]
                 cursor.executemany(
@@ -99,7 +118,7 @@ with connection:
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
+                values = [
                     {"name": get_random_string()} for i in range(chunk_size)
                 ]
                 cursor.executemany(
@@ -118,15 +137,15 @@ with connection:
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
-                    {"name": random.choice(range(1000))}
+                values = [
+                    {"name": str(random.choice(range(1000)))}
                     for i in range(chunk_size)
                 ]
                 cursor.executemany(
                     "INSERT INTO Tag (name) VALUES (%(name)s)", values
                 )
-                values: List[Dict[str, str]] = [
-                    {"subtag_id": random.choice(range(1, 1000))}
+                values = [
+                    {"subtag_id": str(random.choice(range(1, 1000)))}
                     for i in range(chunk_size)
                 ]
                 cursor.executemany(
@@ -143,7 +162,7 @@ with connection:
             connection.commit()
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
+                values = [
                     {"name": get_random_string()} for i in range(chunk_size)
                 ]
                 cursor.executemany(
@@ -159,10 +178,10 @@ with connection:
             connection.commit()
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
-                values: List[Dict[str, str]] = [
+                values = [
                     {
                         "name": get_random_string(),
-                        "number_col": random.choice(range(1000)),
+                        "number_col": str(random.choice(range(1000))),
                     }
                     for i in range(chunk_size)
                 ]

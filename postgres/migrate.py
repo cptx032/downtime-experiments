@@ -38,7 +38,7 @@ with connection:
         connection.commit()
     # drop column
     elif op_code == "A6":
-        cursor.execute("ALTER TABLE Tag DROP COLUMN name;")
+        cursor.execute("ALTER TABLE Tag DROP COLUMN other_name;")
         connection.commit()
     elif op_code == "A8":
         cursor.execute("ALTER TABLE Tag ALTER COLUMN name type varchar(255);")
