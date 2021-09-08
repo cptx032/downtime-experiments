@@ -52,7 +52,7 @@ with connection:
         )
         connection.commit()
     elif op_code == "A7":
-        cursor.execute("ALTER TABLE Tag rename name to new_column_name;")
+        cursor.execute("ALTER TABLE Tag rename other_name to new_column_name;")
         connection.commit()
     elif op_code == "A4":
         cursor.execute("DROP TABLE Subtag;")
