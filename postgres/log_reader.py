@@ -1,5 +1,12 @@
+import argparse
 from datetime import datetime
 from typing import List, Optional, Tuple
+
+parser = argparse.ArgumentParser(
+    description="It does a UPDATE in a table at each 0.5 seconds"
+)
+parser.add_argument("read_write", type=str, help="read|write")
+args = parser.parse_args()
 
 
 def get_metrics(
@@ -20,10 +27,14 @@ def get_metrics(
                 continue
             if line.startswith("START MIGRATION"):
                 migration_started = True
-                migration_start = datetime.fromisoformat(line.split()[-1].replace(',', '.')[:-9])
+                migration_start = datetime.fromisoformat(
+                    line.split()[-1].replace(",", ".")[:-9]
+                )
             elif line.startswith("END MIGRATION"):
                 migration_ends = True
-                migration_end = datetime.fromisoformat(line.split()[-1].replace(',', '.')[:-9])
+                migration_end = datetime.fromisoformat(
+                    line.split()[-1].replace(",", ".")[:-9]
+                )
                 migration_duration = (
                     migration_end - migration_start
                 ).total_seconds()
@@ -81,7 +92,9 @@ if __name__ == "__main__":
     print(";".join(headers))
     for population in (1, 10, 100):
         for operation in operations:
-            file_path: str = "read-log-{}-{}.txt".format(operation, population)
+            file_path: str = "{}-log-{}-{}.txt".format(
+                args.read_write, operation, population
+            )
             before: List[datetime]
             during: List[datetime]
             after: List[datetime]

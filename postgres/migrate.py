@@ -1,9 +1,8 @@
 # migrate.py
 
-from typing import List, Dict
+import sys
 
 import psycopg2
-import sys
 from psycopg2.extensions import connection as Con
 
 op_code: str = sys.argv[1]
@@ -23,7 +22,9 @@ with connection:
         connection.commit()
     # add fk
     elif op_code == "A12":
-        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT subtag_id_fk FOREIGN KEY(subtag_id) REFERENCES Subtag(id) ON DELETE CASCADE;")
+        cursor.execute(
+            "ALTER TABLE Tag ADD CONSTRAINT subtag_id_fk FOREIGN KEY(subtag_id) REFERENCES Subtag(id) ON DELETE CASCADE;"
+        )
         connection.commit()
     # drop default value
     elif op_code == "A21":
@@ -31,7 +32,9 @@ with connection:
         connection.commit()
     # add table
     elif op_code == "A1":
-        cursor.execute("CREATE TABLE Subtag (subtag_id integer, constraint fk_ foreign key(subtag_id) references Tag(id) )")
+        cursor.execute(
+            "CREATE TABLE Subtag (subtag_id integer, constraint fk_ foreign key(subtag_id) references Tag(id) )"
+        )
         connection.commit()
     # drop column
     elif op_code == "A6":
@@ -44,7 +47,9 @@ with connection:
         cursor.execute("ALTER TABLE Subtag drop constraint fk_;")
         connection.commit()
     elif op_code == "A20":
-        cursor.execute("ALTER TABLE Tag alter column other_column set default 'default value';")
+        cursor.execute(
+            "ALTER TABLE Tag alter column other_column set default 'default value';"
+        )
         connection.commit()
     elif op_code == "A7":
         cursor.execute("ALTER TABLE Tag rename name to new_column_name;")
@@ -56,7 +61,9 @@ with connection:
         cursor.execute("ALTER TABLE Tag ALTER COLUMN name drop not null;")
         connection.commit()
     elif op_code == "A16":
-        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (number_col <= 1000);")
+        cursor.execute(
+            "ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (number_col <= 1000);"
+        )
         connection.commit()
     elif op_code == "A5":
         cursor.execute("ALTER TABLE Subtag RENAME TO NewTableName;")
