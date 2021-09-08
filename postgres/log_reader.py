@@ -2,12 +2,6 @@ import argparse
 from datetime import datetime
 from typing import List, Optional, Tuple
 
-parser = argparse.ArgumentParser(
-    description="It does a UPDATE in a table at each 0.5 seconds"
-)
-parser.add_argument("read_write", type=str, help="read|write")
-args = parser.parse_args()
-
 
 def get_metrics(
     file_path: str,
@@ -59,6 +53,11 @@ def get_metrics(
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="It does a UPDATE in a table at each 0.5 seconds"
+    )
+    parser.add_argument("read_write", type=str, help="read|write")
+    args = parser.parse_args()
     # the A10 is not possible in normal django applications
     operations: List[str] = [
         "A18",
