@@ -89,7 +89,7 @@ if __name__ == "__main__":
     ]
 
     print(";".join(headers))
-    for population in (1, 10, 100):
+    for population in (10, 100, 1000):
         for operation in operations:
             file_path: str = "{}-log-{}-{}.txt".format(
                 args.read_write, operation, population
