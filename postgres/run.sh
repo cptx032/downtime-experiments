@@ -7,7 +7,7 @@ for population in "${populations[@]}"
 do
 	for operation in "${operations[@]}"
 	do
-		echo $population $operation
+		echo read $population $operation
 		bash start_read_benchmark.sh $operation $population Tag
 	done
 done
@@ -16,7 +16,7 @@ for population in "${populations[@]}"
 do
 	for operation in "${operations[@]}"
 	do
-		echo $population $operation
+		echo write $population $operation
 		bash start_write_benchmark.sh $operation $population Tag
 	done
 done
