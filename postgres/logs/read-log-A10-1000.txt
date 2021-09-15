@@ -1,91 +1,89 @@
 
-2021-09-10T07:27:21.088662;2021-09-10T07:27:21.089477;0;relation "tag" does not exist
+2021-09-12T06:51:02.229056;2021-09-12T06:51:02.229934;0;relation "tag" does not exist
 LINE 1: SELECT * from Tag LIMIT 100
                       ^
 
-2021-09-10T07:27:21.590896;2021-09-10T07:27:21.591545;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:02.730857;2021-09-12T06:51:02.731488;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:22.092584;2021-09-10T07:27:22.093165;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:03.232633;2021-09-12T06:51:03.233289;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:22.594222;2021-09-10T07:27:22.594850;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:03.734293;2021-09-12T06:51:03.735187;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:23.095986;2021-09-10T07:27:23.096662;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:04.236481;2021-09-12T06:51:04.237210;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:23.597796;2021-09-10T07:27:23.598421;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:04.738192;2021-09-12T06:51:04.738832;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:24.099504;2021-09-10T07:27:24.100093;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:05.239769;2021-09-12T06:51:05.240418;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:24.601203;2021-09-10T07:27:24.601830;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:05.741474;2021-09-12T06:51:05.742068;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:25.102869;2021-09-10T07:27:25.103537;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:06.243068;2021-09-12T06:51:06.243712;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:25.604525;2021-09-10T07:27:25.605256;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:06.744668;2021-09-12T06:51:06.745392;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:26.106329;2021-09-10T07:27:26.107461;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:07.246678;2021-09-12T06:51:07.247211;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:26.608911;2021-09-10T07:27:26.609763;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:07.748214;2021-09-12T06:51:07.748771;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:27.110911;2021-09-10T07:27:27.111476;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:08.249722;2021-09-12T06:51:08.250276;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:27.612642;2021-09-10T07:27:27.613463;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:08.751403;2021-09-12T06:51:08.751976;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:28.114637;2021-09-10T07:27:28.115304;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:09.253032;2021-09-12T06:51:09.253659;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:28.616511;2021-09-10T07:27:28.617075;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:09.754780;2021-09-12T06:51:09.755603;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:29.118311;2021-09-10T07:27:29.119206;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:10.256689;2021-09-12T06:51:10.257327;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:29.620397;2021-09-10T07:27:29.620965;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:10.758326;2021-09-12T06:51:10.758940;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:30.122031;2021-09-10T07:27:30.122875;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:11.259963;2021-09-12T06:51:11.260552;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:30.624049;2021-09-10T07:27:30.624787;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:11.761589;2021-09-12T06:51:11.762271;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:31.125852;2021-09-10T07:27:31.126548;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:12.263448;2021-09-12T06:51:12.264028;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:31.627827;2021-09-10T07:27:31.628525;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:12.764988;2021-09-12T06:51:12.765552;0;current transaction is aborted, commands ignored until end of transaction block
 
-START MIGRATION 2021-09-10T07:27:31,994867690+00:00
-2021-09-10T07:27:32.129501;2021-09-10T07:27:32.130045;0;current transaction is aborted, commands ignored until end of transaction block
+START MIGRATION 2021-09-12T06:51:13,061814607+00:00
+END MIGRATION 2021-09-12T06:51:13,227494769+00:00
+2021-09-12T06:51:13.266752;2021-09-12T06:51:13.267450;0;current transaction is aborted, commands ignored until end of transaction block
 
-END MIGRATION 2021-09-10T07:27:32,166000376+00:00
-2021-09-10T07:27:32.631038;2021-09-10T07:27:32.631733;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:13.768432;2021-09-12T06:51:13.769013;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:33.132955;2021-09-10T07:27:33.133541;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:14.269911;2021-09-12T06:51:14.270512;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:33.634591;2021-09-10T07:27:33.635253;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:14.771515;2021-09-12T06:51:14.772106;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:34.136385;2021-09-10T07:27:34.137023;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:15.273149;2021-09-12T06:51:15.273728;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:34.638008;2021-09-10T07:27:34.638602;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:15.774889;2021-09-12T06:51:15.775828;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:35.139793;2021-09-10T07:27:35.140623;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:16.276862;2021-09-12T06:51:16.277561;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:35.641889;2021-09-10T07:27:35.642581;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:16.778541;2021-09-12T06:51:16.779477;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:36.143799;2021-09-10T07:27:36.144666;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:17.280705;2021-09-12T06:51:17.281309;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:36.646179;2021-09-10T07:27:36.647036;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:17.782396;2021-09-12T06:51:17.783001;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:37.148135;2021-09-10T07:27:37.148863;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:18.284091;2021-09-12T06:51:18.285090;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:37.650318;2021-09-10T07:27:37.651695;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:18.786240;2021-09-12T06:51:18.786954;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:38.152992;2021-09-10T07:27:38.153559;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:19.287997;2021-09-12T06:51:19.288586;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:38.654786;2021-09-10T07:27:38.655485;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:19.789594;2021-09-12T06:51:19.790202;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:39.156550;2021-09-10T07:27:39.157110;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:20.291395;2021-09-12T06:51:20.292023;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:39.658432;2021-09-10T07:27:39.659036;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:20.792960;2021-09-12T06:51:20.793511;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:40.160024;2021-09-10T07:27:40.160585;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:21.294623;2021-09-12T06:51:21.295178;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:40.661736;2021-09-10T07:27:40.662306;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:21.796250;2021-09-12T06:51:21.797112;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:41.163489;2021-09-10T07:27:41.164224;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:22.298493;2021-09-12T06:51:22.299125;0;current transaction is aborted, commands ignored until end of transaction block
 
-2021-09-10T07:27:41.665353;2021-09-10T07:27:41.665978;0;current transaction is aborted, commands ignored until end of transaction block
-
-2021-09-10T07:27:42.166625;2021-09-10T07:27:42.167201;0;current transaction is aborted, commands ignored until end of transaction block
+2021-09-12T06:51:22.800227;2021-09-12T06:51:22.800813;0;current transaction is aborted, commands ignored until end of transaction block
 
