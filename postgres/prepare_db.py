@@ -199,6 +199,7 @@ with connection:
                     columns_definition
                 )
             )
+            connection.commit()
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
                 values = [
@@ -211,6 +212,7 @@ with connection:
                     ),
                     values,
                 )
+                connection.commit()
                 values = [
                     {
                         "subtag_id": str(random.choice(range(1, 1000))),
@@ -224,6 +226,7 @@ with connection:
                     ),
                     values,
                 )
+                connection.commit()
                 time.sleep(0.1)
             connection.commit()
         # drop not null constraint

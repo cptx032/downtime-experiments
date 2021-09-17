@@ -10,12 +10,12 @@ export PY_EXE=$(which python)
 export NORMAL_AVG_RESPONSE_WINDOW=10
 
 start_read_client() {
-	$PY_EXE ./read-client.py $READ_LOG_PATH $READ_TABLE_NAME &
+    $PY_EXE ./read-client.py $READ_LOG_PATH $READ_TABLE_NAME &
     export READ_CLIENT_PID=$!
     sleep 1
 }
 stop_read_client() {
-	kill -9 $READ_CLIENT_PID
+    kill -9 $READ_CLIENT_PID
 }
 
 
