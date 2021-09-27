@@ -100,7 +100,10 @@ with connection:
                 "INSERT INTO Subtag (name, {}) VALUES (%(name)s, {})".format(
                     cols_separated_by_comma, percent_format
                 ),
-                [{"name": get_random_string(), **values_dict} for i in range(3)],
+                [
+                    {"name": get_random_string(), **values_dict}
+                    for i in range(3)
+                ],
             )
             for i in range(population):
                 print("populating {}/{}".format(i + 1, population))
@@ -252,7 +255,7 @@ with connection:
                 time.sleep(0.1)
             connection.commit()
         # add constraint
-        elif op_code == "A16":
+        elif op_code in ("A16", "A16n"):
             cursor.execute(
                 "CREATE TABLE Tag (name varchar(255), number_col integer, id serial primary key, {})".format(
                     columns_definition

@@ -65,6 +65,13 @@ with connection:
             "ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (number_col <= 1000);"
         )
         connection.commit()
+    elif op_code == "A16n":
+        cursor.execute(
+            "ALTER TABLE Tag ADD CONSTRAINT my_constraint CHECK (number_col <= 1000) NOT VALID;"
+        )
+        connection.commit()
+        cursor.execute("ALTER TABLE Tag VALIDATE CONSTRAINT my_constraint;")
+        connection.commit()
     elif op_code == "A5":
         cursor.execute("ALTER TABLE Subtag RENAME TO NewTableName;")
         connection.commit()
