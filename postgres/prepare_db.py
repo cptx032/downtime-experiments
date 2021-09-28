@@ -39,7 +39,7 @@ connection: Con = psycopg2.connect(
 chunk_size: int = 10000
 with connection:
     with connection.cursor() as cursor:
-        if op_code in ("A18", "A2", "A2n", "A1", "A8"):
+        if op_code in ("A18", "A18n", "A2", "A2n", "A1", "A8"):
             cursor.execute(
                 "CREATE TABLE Tag (name varchar(255), id serial primary key, {})".format(
                     columns_definition

@@ -11,13 +11,24 @@ op_code: str = sys.argv[1]
 connection: Con = psycopg2.connect(
     "dbname='downtimes' user='postgres' host='127.0.0.1' password='master'"
 )
+
+# concurrent indexes cannot be created inside a transaction and the "with"
+# keyword creates a transaction automatically, so A18n is created out of with
+if op_code == "A18n":
+    cursor = connection.cursor()
+    connection.autocommit = True
+    cursor.execute("CREATE INDEX CONCURRENTLY ON Tag ((name));")
+    connection.commit()
+    cursor.close()
+    connection.close()
+    sys.exit(0)
+
 with connection:
     cursor = connection.cursor()
     # create index
     if op_code == "A18":
         cursor.execute("CREATE INDEX ON Tag ((name));")
         connection.commit()
-    # add column
     elif op_code == "A2":
         cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int default 0;")
         connection.commit()
