@@ -50,6 +50,12 @@ with connection:
             "ALTER TABLE Tag ADD CONSTRAINT subtag_id_fk FOREIGN KEY(subtag_id) REFERENCES Subtag(id) ON DELETE CASCADE;"
         )
         connection.commit()
+    elif op_code == "A12n":
+        cursor.execute(
+            "ALTER TABLE Tag ADD CONSTRAINT subtag_id_fk FOREIGN KEY(subtag_id) REFERENCES Subtag(id) ON DELETE CASCADE NOT VALID;"
+        )
+        cursor.execute("ALTER TABLE Tag VALIDATE CONSTRAINT subtag_id_fk;")
+        connection.commit()
     # drop default value
     elif op_code == "A21":
         cursor.execute("ALTER TABLE Tag alter column number_col drop default;")

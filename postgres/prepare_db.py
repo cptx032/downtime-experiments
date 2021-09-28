@@ -85,7 +85,7 @@ with connection:
                 time.sleep(0.1)
             connection.commit()
         # add fk
-        elif op_code == "A12":
+        elif op_code in ("A12", "A12n"):
             cursor.execute(
                 "CREATE TABLE Subtag (name varchar(255), id serial primary key, {})".format(
                     columns_definition
