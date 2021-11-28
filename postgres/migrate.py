@@ -55,6 +55,7 @@ with connection:
         cursor.execute(
             "ALTER TABLE Tag ADD CONSTRAINT subtag_id_fk FOREIGN KEY(subtag_id) REFERENCES Subtag(id) ON DELETE CASCADE NOT VALID;"
         )
+        connection.commit()
         cursor.execute("ALTER TABLE Tag VALIDATE CONSTRAINT subtag_id_fk;")
         connection.commit()
     # drop default value
