@@ -52,4 +52,5 @@ with connection:
                         ),
                         file=log_file,
                     )
+                    log_file.flush()
             time.sleep(delay)

@@ -40,8 +40,9 @@ with connection:
         while updated != 0:
             count += 1
             cursor.execute(
-                "UPDATE Tag SET new_column=5 WHERE id IN (SELECT id FROM Tag WHERE new_column IS NULL LIMIT 5000)"
+                "UPDATE Tag SET new_column=5 WHERE id IN (SELECT id FROM Tag WHERE new_column IS NULL LIMIT 50)"
             )
+            connection.commit()
             updated = cursor.rowcount
             time.sleep(0.1)
     # add fk
