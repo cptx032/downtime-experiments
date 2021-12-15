@@ -15,10 +15,19 @@ fi
 
 export READ_LOG_PATH="./read-log-$OP_DB_CODE-$POPULATION_PARAM"
 
-
 export PY_EXE=$(which python)
 # how many seconds we will look before and after migration
 export NORMAL_AVG_RESPONSE_WINDOW=10
+
+
+start_locks_watcher() {
+    $PY_EXE ./locks_watcher.py > locks.csv &
+    export LOCKS_WATCHER_PID=$!
+}
+
+stop_locks_watcher() {
+    kill -9 $LOCKS_WATCHER_PID
+}
 
 setup_database() {
     echo "Setting up database"
@@ -37,8 +46,8 @@ start_read_client() {
         fi
         $PY_EXE ./read-client.py "${READ_LOG_PATH}${READLOG_SUFFIX}.txt" $READ_TABLE_NAME &
         READ_CLIENT_PIDS+=($!)
-        sleep 1
     done
+    sleep 1
     echo Read Client Started!
 }
 stop_read_client() {
@@ -82,6 +91,7 @@ echo "Initial Migration"
 $PY_EXE ./prepare_db.py $OP_DB_CODE $POPULATION_PARAM
 
 create_empty_log_files
+start_locks_watcher
 start_read_client
 # while this script is stopped because this sleep the read-application is
 # still running in the background
@@ -94,3 +104,4 @@ register_migration "END MIGRATION"
 echo "Getting metrics after migration"
 sleep $NORMAL_AVG_RESPONSE_WINDOW
 stop_read_client
+stop_locks_watcher
