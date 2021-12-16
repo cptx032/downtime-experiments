@@ -33,7 +33,6 @@ with connection:
             start: str = datetime.now().isoformat()
             cursor.execute(sql)
             connection.commit()
-            # print(f"{start}")
             for row in cursor.fetchall():
             	print(",".join([start] + [str(i) for i in row]))
             time.sleep(delay)
