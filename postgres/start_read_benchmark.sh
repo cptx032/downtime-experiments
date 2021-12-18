@@ -23,10 +23,12 @@ export NORMAL_AVG_RESPONSE_WINDOW=10
 start_locks_watcher() {
     $PY_EXE ./locks_watcher.py > locks.csv &
     export LOCKS_WATCHER_PID=$!
+    echo Locks Watcher Started!
 }
 
 stop_locks_watcher() {
     kill -9 $LOCKS_WATCHER_PID
+    echo Locks Watcher Stopped!
 }
 
 setup_database() {
