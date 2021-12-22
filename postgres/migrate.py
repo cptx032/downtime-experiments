@@ -25,7 +25,7 @@ if op_code == "A18n":
 elif op_code == "A2n":
     cursor = connection.cursor()
     connection.autocommit = True
-    cursor.execute("ALTER TABLE Tag SET (autovacuum_analyze_scale_factor = 0.05);")
+    cursor.execute("ALTER TABLE Tag SET (autovacuum_analyze_scale_factor = 1.1);")
     connection.commit()
     cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int;")
     connection.commit()
