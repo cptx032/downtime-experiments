@@ -198,7 +198,7 @@ with connection:
             )
             connection.commit()
             cursor.execute(
-                "CREATE TABLE Subtag (subtag_id integer, {}, constraint fk_ foreign key(subtag_id) references Tag(id) )".format(
+                "CREATE TABLE Subtag (subtag_id integer, {}, constraint fk_ foreign key(subtag_id) references Tag(id) on delete cascade )".format(
                     columns_definition
                 )
             )

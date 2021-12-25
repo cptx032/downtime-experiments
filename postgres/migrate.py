@@ -25,8 +25,6 @@ if op_code == "A18n":
 elif op_code == "A2n":
     cursor = connection.cursor()
     connection.autocommit = True
-    cursor.execute("ALTER TABLE Tag SET (autovacuum_analyze_scale_factor = 1.1);")
-    connection.commit()
     cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int;")
     connection.commit()
 
@@ -54,19 +52,6 @@ with connection:
     elif op_code == "A2":
         cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int default 0;")
         connection.commit()
-    # elif op_code == "A2n":
-    #     cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int;")
-    #     connection.commit()
-    #     updated: int = -1
-    #     count: int = 0
-    #     while updated != 0:
-    #         count += 1
-    #         cursor.execute(
-    #             "UPDATE Tag SET new_column=5 WHERE id IN (SELECT id FROM Tag WHERE new_column IS NULL LIMIT 50)"
-    #         )
-    #         connection.commit()
-    #         updated = cursor.rowcount
-    #         time.sleep(0.1)
     # add fk
     elif op_code == "A12":
         cursor.execute(
