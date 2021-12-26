@@ -85,7 +85,7 @@ with connection:
                 time.sleep(0.1)
             connection.commit()
         # add primary key
-        elif op_code in ("A10",):
+        elif op_code in ("A10", "A10n"):
             cursor.execute(
                 "CREATE TABLE Tag (name varchar(255), other_name varchar(255), id serial, {})".format(
                     columns_definition

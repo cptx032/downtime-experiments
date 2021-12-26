@@ -47,6 +47,17 @@ elif op_code == "A2n":
     cursor.close()
     connection.close()
     sys.exit(0)
+elif op_code == "A10n":
+    cursor = connection.cursor()
+    connection.autocommit = True
+    cursor.execute("CREATE UNIQUE INDEX CONCURRENTLY tag_unique_index ON Tag(other_name);")
+    connection.commit()
+
+    cursor.execute("ALTER TABLE Tag ADD CONSTRAINT tag_pk PRIMARY KEY USING INDEX tag_unique_index;")
+    connection.commit()
+    cursor.close()
+    connection.close()
+    sys.exit(0)
 
 with connection:
     cursor = connection.cursor()

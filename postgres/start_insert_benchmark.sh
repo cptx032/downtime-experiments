@@ -39,6 +39,10 @@ start_insert_client() {
         then
             export column_name=other_name
         fi
+        if [ $OP_DB_CODE = "A10n" ]
+        then
+            export column_name=other_name
+        fi
         $PY_EXE ./insert-client.py "${INSERT_LOG_PATH}${INSERTLOG_SUFFIX}.txt" $WRITE_TABLE_NAME $column_name &
         INSERT_CLIENT_PIDS+=($!)
     done
