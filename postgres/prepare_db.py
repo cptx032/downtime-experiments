@@ -84,7 +84,31 @@ with connection:
                 )
                 time.sleep(0.1)
             connection.commit()
-        # add fk
+        # add primary key
+        elif op_code in ("A10",):
+            cursor.execute(
+                "CREATE TABLE Tag (name varchar(255), other_name varchar(255), id serial, {})".format(
+                    columns_definition
+                )
+            )
+            for i in range(population):
+                print("populating {}/{}".format(i + 1, population))
+                values: List[Dict[str, str]] = [
+                    {
+                        "name": get_random_string(),
+                        "other_name": get_random_string(),
+                        **values_dict
+                    }
+                    for i in range(chunk_size)
+                ]
+                cursor.executemany(
+                    "INSERT INTO Tag (name, other_name, {}) VALUES (%(name)s, %(other_name)s, {})".format(
+                        cols_separated_by_comma, percent_format
+                    ),
+                    values,
+                )
+                time.sleep(0.1)
+            connection.commit()
         elif op_code in ("A12", "A12n"):
             cursor.execute(
                 "CREATE TABLE Subtag (name varchar(255), id serial primary key, {})".format(

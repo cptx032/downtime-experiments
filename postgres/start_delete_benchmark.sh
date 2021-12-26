@@ -34,7 +34,7 @@ start_delete_client() {
         then
             DELETELOG_SUFFIX="-${i}"
         fi
-        $PY_EXE ./delete-client.py "${DELETE_LOG_PATH}${DELETELOG_SUFFIX}.txt" $DELETE_TABLE_NAME name $POPULATION_PARAM &
+        $PY_EXE ./delete-client.py "${DELETE_LOG_PATH}${DELETELOG_SUFFIX}.txt" $DELETE_TABLE_NAME $POPULATION_PARAM &
         DELETE_CLIENT_PIDS+=($!)
     done
     sleep 1

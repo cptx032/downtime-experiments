@@ -11,7 +11,6 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("log_file_name", type=str, help="log file name")
 parser.add_argument("table", type=str, help="the table name")
-parser.add_argument("column", type=str, help="the column name")
 parser.add_argument(
     "population", type=int, help="population argument used in prepare_db.py"
 )

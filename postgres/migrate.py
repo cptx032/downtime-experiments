@@ -1,12 +1,17 @@
-# migrate.py
-
 import sys
+import argparse
 import time
 
 import psycopg2
 from psycopg2.extensions import connection as Con
 
-op_code: str = sys.argv[1]
+parser = argparse.ArgumentParser(
+    description="Migrates the database schema"
+)
+parser.add_argument("op_code", type=str, help="DDL code")
+args = parser.parse_args()
+
+op_code: str = args.op_code
 
 connection: Con = psycopg2.connect(
     "dbname='downtimes' user='postgres' host='127.0.0.1' password='master'"
@@ -51,6 +56,10 @@ with connection:
         connection.commit()
     elif op_code == "A2":
         cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int default 0;")
+        connection.commit()
+    # add primary key
+    elif op_code == "A10":
+        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT othernamepk PRIMARY KEY (other_name);")
         connection.commit()
     # add fk
     elif op_code == "A12":
