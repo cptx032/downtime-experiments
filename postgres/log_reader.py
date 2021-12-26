@@ -1,18 +1,18 @@
 import argparse
 from datetime import datetime
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 
 
 def get_metrics(
     file_path: str,
 ) -> Tuple[List[float], List[float], List[float], float]:
-    migration_started: bool = False
-    migration_ends: bool = False
     times_before_migration: List[float] = []
     times_during_migration: List[float] = []
     times_after_migration: List[float] = []
     migration_start: datetime
     migration_duration: float
+
+    requests: Dict[datetime, datetime] = {}
 
     with open(file_path) as log_file:
         for line in log_file.readlines():
@@ -20,12 +20,10 @@ def get_metrics(
             if not line:
                 continue
             if line.startswith("START MIGRATION"):
-                migration_started = True
                 migration_start = datetime.fromisoformat(
                     line.split()[-1].replace(",", ".")[:-9]
                 )
             elif line.startswith("END MIGRATION"):
-                migration_ends = True
                 migration_end = datetime.fromisoformat(
                     line.split()[-1].replace(",", ".")[:-9]
                 )
@@ -34,16 +32,25 @@ def get_metrics(
                 ).total_seconds()
             else:
                 start, end, success, error_description = line.split(";")
-                timedelta = datetime.fromisoformat(
-                    end
-                ) - datetime.fromisoformat(start)
-                milliseconds: float = timedelta.total_seconds() * 1000
-                if not migration_started:
-                    times_before_migration.append(milliseconds)
-                elif migration_started and (not migration_ends):
-                    times_during_migration.append(milliseconds)
-                elif migration_started and migration_ends:
-                    times_after_migration.append(milliseconds)
+                requests[
+                    datetime.fromisoformat(start)
+                ] = datetime.fromisoformat(end)
+    for start in requests:
+        end_date: datetime = requests[start]
+        if start <= migration_start:
+            times_before_migration.append(
+                (end_date - start).total_seconds() * 1000
+            )
+        elif (start > migration_start) and (start <= migration_end):
+            times_during_migration.append(
+                (end_date - start).total_seconds() * 1000
+            )
+        elif start > migration_end:
+            times_after_migration.append(
+                (end_date - start).total_seconds() * 1000
+            )
+        else:
+            raise ValueError("Unknown state")
     return (
         times_before_migration,
         times_during_migration,
@@ -58,22 +65,27 @@ if __name__ == "__main__":
     )
     parser.add_argument("read_write", type=str, help="read|write")
     args = parser.parse_args()
-    # the A10 is not possible in normal django applications
     operations: List[str] = [
-        "A18",
-        "A2",
-        "A12",
-        "A21",
         "A1",
-        "A6",
-        "A8",
-        "A13",
-        "A20",
-        "A7",
+        "A2",
+        "A2n",
         "A4",
-        "A24",
-        "A16",
         "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A10",
+        "A10n",
+        "A12",
+        "A12n",
+        "A13",
+        "A16",
+        "A16n",
+        "A18",
+        "A18n",
+        "A20",
+        "A21",
+        "A24",
     ]
 
     headers = [
