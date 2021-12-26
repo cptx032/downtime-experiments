@@ -10,6 +10,7 @@ do
 	do
 		echo read $population $operation
 		bash start_read_benchmark.sh $operation $population Tag
+		sleep 10
 	done
 done
 
@@ -20,6 +21,7 @@ do
 	do
 		echo write $population $operation
 		bash start_write_benchmark.sh $operation $population Tag
+		sleep 10
 	done
 done
 
@@ -30,6 +32,7 @@ do
 	do
 		echo insert $population $operation
 		bash start_insert_benchmark.sh $operation $population Tag
+		sleep 10
 	done
 done
 
@@ -40,5 +43,6 @@ do
 	do
 		echo delete $population $operation
 		bash start_delete_benchmark.sh $operation $population Tag
+		sleep 10
 	done
 done
