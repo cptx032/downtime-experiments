@@ -2,7 +2,7 @@
 
 export OP_DB_CODE=$1
 export POPULATION_PARAM=$2
-export WRITE_TABLE_NAME=$3
+export INSERT_TABLE_NAME=$3
 export NUM_CLIENTS=$4
 
 # array with read clients PIDs
@@ -43,7 +43,7 @@ start_insert_client() {
         then
             export column_name=other_name
         fi
-        $PY_EXE ./insert-client.py "${INSERT_LOG_PATH}${INSERTLOG_SUFFIX}.txt" $WRITE_TABLE_NAME $column_name &
+        $PY_EXE ./insert-client.py "${INSERT_LOG_PATH}${INSERTLOG_SUFFIX}.txt" $INSERT_TABLE_NAME $column_name &
         INSERT_CLIENT_PIDS+=($!)
     done
     sleep 1
