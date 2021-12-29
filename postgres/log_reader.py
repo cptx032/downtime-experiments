@@ -60,10 +60,10 @@ def get_metrics(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
         description="It does a UPDATE in a table at each 0.5 seconds"
     )
-    parser.add_argument("read_write", type=str, help="read|write")
+    parser.add_argument("read_write", type=str, help="read|write|insert|delete")
     args = parser.parse_args()
     operations: List[str] = [
         "A1",
@@ -88,7 +88,7 @@ if __name__ == "__main__":
         "A24",
     ]
 
-    headers = [
+    headers: List[str] = [
         "Operation",
         "Number of Rows",
         "Migration Duration",
@@ -103,9 +103,7 @@ if __name__ == "__main__":
     print(";".join(headers))
     for population in (10, 100, 1000):
         for operation in operations:
-            file_path: str = "{}-log-{}-{}.txt".format(
-                args.read_write, operation, population
-            )
+            file_path: str = f"logs/{args.read_write}-log-{operation}-{population}.txt"
             before: List[float]
             during: List[float]
             after: List[float]
