@@ -1,13 +1,11 @@
-import sys
 import argparse
+import sys
 import time
 
 import psycopg2
 from psycopg2.extensions import connection as Con
 
-parser = argparse.ArgumentParser(
-    description="Migrates the database schema"
-)
+parser = argparse.ArgumentParser(description="Migrates the database schema")
 parser.add_argument("op_code", type=str, help="DDL code")
 args = parser.parse_args()
 
@@ -28,9 +26,23 @@ if op_code == "A18n":
     connection.close()
     sys.exit(0)
 elif op_code == "A2n":
+    default_value: int = 5
     cursor = connection.cursor()
     connection.autocommit = True
-    cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int;")
+    cursor.execute("ALTER TABLE Tag ADD COLUMN new_column int DEFAULT NULL;")
+    connection.commit()
+
+    # in the insert situation we have the following problem:
+    # while the script is looking for rows with new_column=null the insert
+    # client is constantly inserting new rows, making the while loop infinite
+    # this just can happen in a production environment. So we do:
+    # - det as default value "null", in such way that postgres will lock
+    # the table but, as we are using null as default value, this lock is very
+    # fast in duration. After that, we change the default value to the real
+    # default value, in this case, the value "5". This means that all the old
+    # registers are null and the new registers will have the new default value
+    # basically we defined a default value only for the new registers
+    cursor.execute("ALTER TABLE Tag ALTER COLUMN new_column SET DEFAULT 5;")
     connection.commit()
 
     updated: int = -1
@@ -50,10 +62,14 @@ elif op_code == "A2n":
 elif op_code == "A10n":
     cursor = connection.cursor()
     connection.autocommit = True
-    cursor.execute("CREATE UNIQUE INDEX CONCURRENTLY tag_unique_index ON Tag(other_name);")
+    cursor.execute(
+        "CREATE UNIQUE INDEX CONCURRENTLY tag_unique_index ON Tag(other_name);"
+    )
     connection.commit()
 
-    cursor.execute("ALTER TABLE Tag ADD CONSTRAINT tag_pk PRIMARY KEY USING INDEX tag_unique_index;")
+    cursor.execute(
+        "ALTER TABLE Tag ADD CONSTRAINT tag_pk PRIMARY KEY USING INDEX tag_unique_index;"
+    )
     connection.commit()
     cursor.close()
     connection.close()
@@ -70,7 +86,9 @@ with connection:
         connection.commit()
     # add primary key
     elif op_code == "A10":
-        cursor.execute("ALTER TABLE Tag ADD CONSTRAINT othernamepk PRIMARY KEY (other_name);")
+        cursor.execute(
+            "ALTER TABLE Tag ADD CONSTRAINT othernamepk PRIMARY KEY (other_name);"
+        )
         connection.commit()
     # add fk
     elif op_code == "A12":
